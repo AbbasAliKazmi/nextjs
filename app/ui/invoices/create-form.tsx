@@ -12,9 +12,12 @@ import {
 import { Button } from '@/app/ui/button';
 import { createInvoice } from '@/app/lib/action';
 import { useFormState } from 'react-dom';
+import { Metadata } from 'next';
 
 
-
+export const metadata: Metadata = {
+  title: 'Invoices',
+};
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState = { message: null, errors: {} };
   const [state, dispatch] = useFormState(createInvoice, initialState);
